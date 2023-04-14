@@ -1,5 +1,15 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import WIcon from '@w-ui/components/icon'
+
+import '@w-ui/theme-chalk/src/index.scss'
+
+const plugins = [WIcon]
+const app = createApp(App)
+
+plugins.forEach(comp => {
+  app.use(comp)
+})
+
+app.mount('#app')
